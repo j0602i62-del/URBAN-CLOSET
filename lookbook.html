@@ -1,0 +1,3646 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOOKBOOK — 2025 SPRING | URBAN CLOSET</title>
+  <meta name="description" content="URBAN CLOSET 2025 SPRING COLLECTION ルックブック。洗練された都会のスタイルフォトギャラリー。">
+  <style id="urban-closet-style">
+/* ==========================================================================
+   URBAN CLOSET - Design System & Stylesheet
+   Minimal, Mode, Genderless Aesthetic
+   Optimized for Mobile & Desktop
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Noto+Sans+JP:wght@200;300;400;500&display=swap');
+
+:root {
+  --color-bg: #FFFFFF;
+  --color-bg-subtle: #F9FAFB;
+  --color-bg-secondary: #F3F4F6;
+  --color-text-main: #0A0A0A;
+  --color-text-muted: #6B7280;
+  --color-text-light: #9CA3AF;
+  --color-border: #E5E7EB;
+  --color-border-subtle: #F3F4F6;
+  --color-black: #0A0A0A;
+  --color-white: #FFFFFF;
+
+  --font-en: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', sans-serif;
+  --font-jp: 'Noto Sans JP', sans-serif;
+
+  --header-height: 68px;
+  --header-height-mobile: 58px;
+  --container-max: 1360px;
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s ease;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-en), var(--font-jp);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  line-height: 1.7;
+  font-weight: 300;
+  overflow-x: hidden;
+  letter-spacing: 0.04em;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+  outline: none;
+}
+
+/* Prevent iOS auto-zoom on inputs */
+input, textarea, select {
+  font-family: inherit;
+  font-size: 16px;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 4vw, 48px);
+  padding-right: clamp(16px, 4vw, 48px);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 4vw, 48px);
+  padding-right: clamp(16px, 4vw, 48px);
+}
+
+.section-spacer {
+  padding-top: clamp(60px, 10vw, 140px);
+  padding-bottom: clamp(60px, 10vw, 140px);
+}
+
+.section-spacer-top {
+  padding-top: clamp(60px, 10vw, 140px);
+}
+
+.section-spacer-bottom {
+  padding-bottom: clamp(60px, 10vw, 140px);
+}
+
+/* Typography Helpers */
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  display: block;
+  margin-bottom: 0.85rem;
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+}
+
+.section-subtitle {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  line-height: 1.85;
+}
+
+/* Minimal Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2.25rem;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: var(--transition-smooth);
+  position: relative;
+  border-radius: 0;
+  cursor: pointer;
+  min-height: 48px;
+}
+
+.btn-primary {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: 1px solid var(--color-black);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--color-black);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.btn-outline-white:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-white);
+}
+
+.btn-text {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-black);
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition-fast);
+}
+
+.btn-text:hover {
+  opacity: 0.6;
+  gap: 0.85rem;
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 100;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: var(--transition-smooth);
+}
+
+.site-header.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  border-bottom-color: var(--color-border);
+}
+
+.site-header.is-transparent {
+  background-color: transparent;
+  border-bottom-color: transparent;
+  color: var(--color-white);
+}
+
+.site-header.is-transparent.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  border-bottom-color: var(--color-border);
+  color: var(--color-text-main);
+}
+
+.header-inner {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+/* Left: Hamburger */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.menu-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  min-height: 44px;
+}
+
+.menu-trigger .burger-icon {
+  width: 22px;
+  height: 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-trigger .burger-icon span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transition: var(--transition-fast);
+}
+
+.menu-trigger:hover .burger-icon span:first-child {
+  transform: translateX(3px);
+}
+
+/* Center: Brand Logo */
+.header-center {
+  text-align: center;
+}
+
+.brand-logo {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-weight: 300;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  display: inline-block;
+  padding: 0.2rem 0;
+}
+
+/* Right: Actions */
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.header-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  position: relative;
+  padding: 0.5rem;
+  min-width: 44px;
+  min-height: 44px;
+  transition: opacity 0.2s ease;
+}
+
+.header-action-btn:hover {
+  opacity: 0.6;
+}
+
+.header-action-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.3;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 17px;
+  height: 17px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-radius: 50%;
+  font-size: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.site-header.is-transparent:not(.is-scrolled) .cart-badge {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+/* ==========================================================================
+   Full-Screen Navigation Overlay
+   ========================================================================== */
+
+.fullscreen-nav {
+  position: fixed;
+  inset: 0;
+  background-color: #0A0A0A;
+  color: #FFFFFF;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
+  display: flex;
+  flex-direction: column;
+}
+
+.fullscreen-nav.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.fullscreen-nav-header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fullscreen-nav-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 0.5rem;
+}
+
+.fullscreen-nav-close:hover {
+  color: #FFFFFF;
+}
+
+.fullscreen-nav-close svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.3;
+}
+
+.fullscreen-nav-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 30px 0 60px;
+}
+
+.fullscreen-nav-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: clamp(30px, 6vw, 100px);
+  align-items: center;
+}
+
+.nav-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.6rem, 2vw, 1.5rem);
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  font-size: clamp(1.8rem, 4.5vw, 3.4rem);
+  font-weight: 200;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  transition: var(--transition-smooth);
+  padding: 0.3rem 0;
+}
+
+.nav-link .nav-num {
+  font-size: 0.82rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.nav-link:hover, .nav-link.is-active {
+  color: #FFFFFF;
+  transform: translateX(12px);
+}
+
+.nav-link:hover .nav-num, .nav-link.is-active .nav-num {
+  color: #FFFFFF;
+}
+
+.nav-meta-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: clamp(20px, 4vw, 40px);
+}
+
+.nav-meta-block h4 {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 0.65rem;
+}
+
+.nav-meta-block p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.nav-social-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-social-links a {
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+
+.nav-social-links a:hover {
+  color: #FFFFFF;
+  border-bottom-color: #FFFFFF;
+}
+
+/* ==========================================================================
+   Search Modal
+   ========================================================================== */
+
+.search-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 10, 10, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 250;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s;
+  display: flex;
+  justify-content: center;
+  padding: clamp(60px, 12vh, 120px) 16px 20px;
+}
+
+.search-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.search-modal-box {
+  background-color: var(--color-white);
+  width: 100%;
+  max-width: 680px;
+  height: fit-content;
+  max-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-16px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.search-modal.is-open .search-modal-box {
+  transform: translateY(0);
+}
+
+.search-header {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.search-header svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.85rem;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.search-input {
+  flex: 1;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  font-weight: 300;
+}
+
+.search-close-btn {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.search-results-area {
+  padding: 1.25rem 1.5rem;
+  overflow-y: auto;
+  max-height: 50vh;
+}
+
+.search-quick-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.search-quick-tag {
+  font-size: 0.75rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.search-quick-tag:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+.search-item-result {
+  display: grid;
+  grid-template-columns: 55px 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.search-item-result img {
+  width: 55px;
+  height: 70px;
+  object-fit: cover;
+}
+
+.search-item-result .item-name {
+  font-size: 0.88rem;
+  font-weight: 400;
+}
+
+.search-item-result .item-price {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   Cart Drawer
+   ========================================================================== */
+
+.cart-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 10, 10, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 300;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s;
+}
+
+.cart-drawer-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--color-white);
+  z-index: 310;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.08);
+}
+
+.cart-drawer-overlay.is-open .cart-drawer {
+  transform: translateX(0);
+}
+
+.cart-drawer-header {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cart-drawer-header h3 {
+  font-size: 0.82rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.cart-drawer-close {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding: 0.5rem;
+}
+
+.cart-drawer-close:hover {
+  color: var(--color-black);
+}
+
+.cart-drawer-items {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.cart-empty-message {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+.cart-item-card {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: 1rem;
+  align-items: flex-start;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.cart-item-card img {
+  width: 70px;
+  height: 90px;
+  object-fit: cover;
+  background-color: var(--color-bg-subtle);
+}
+
+.cart-item-info h4 {
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+
+.cart-item-meta {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.cart-item-price {
+  font-size: 0.82rem;
+  font-weight: 400;
+}
+
+.cart-item-remove {
+  color: var(--color-text-light);
+  font-size: 0.75rem;
+  padding: 0.5rem;
+}
+
+.cart-item-remove:hover {
+  color: var(--color-black);
+}
+
+.cart-drawer-footer {
+  padding: 1.25rem 1.5rem 1.75rem;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg-subtle);
+}
+
+.cart-subtotal-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+  font-size: 0.88rem;
+}
+
+.cart-subtotal-row .total-amount {
+  font-weight: 500;
+}
+
+.cart-checkout-btn {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Product Card Component (Shared across TOP, PRODUCTS, DETAIL)
+   ========================================================================== */
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.product-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background-color: #F7F7F8;
+  margin-bottom: 1rem;
+}
+
+.product-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-img-primary {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 1;
+}
+
+.product-img-secondary {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+}
+
+/* Hover: Swap Image to Secondary Angle */
+@media (hover: hover) {
+  .product-card:hover .product-img-primary {
+    opacity: 0;
+  }
+  .product-card:hover .product-img-secondary {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+.product-badge-new {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  padding: 0.2rem 0.55rem;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.product-brand {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.product-name {
+  font-size: 0.88rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: var(--color-text-main);
+  line-height: 1.4;
+}
+
+.product-price {
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--color-text-main);
+  margin-top: 0.15rem;
+}
+
+/* ==========================================================================
+   Page: TOP (Hero, New Arrivals, Concept, Lookbook Preview, Newsletter)
+   ========================================================================== */
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--color-white);
+}
+
+.hero-bg-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.76);
+  transform: scale(1.02);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 860px;
+  padding: 0 20px;
+}
+
+.hero-eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  display: inline-block;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 6vw, 4.8rem);
+  font-weight: 200;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.hero-lead {
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+  margin-bottom: 2.25rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.62rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  z-index: 10;
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-scroll-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  animation: scrollDown 2s infinite ease-in-out;
+}
+
+@keyframes scrollDown {
+  0% { transform: translateY(-100%); }
+  50% { transform: translateY(0%); }
+  100% { transform: translateY(100%); }
+}
+
+/* New Arrivals Section */
+.new-arrivals-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: clamp(24px, 4vw, 50px);
+  gap: 1rem;
+}
+
+.products-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(14px, 2.5vw, 30px);
+}
+
+/* Brand Concept Section */
+.concept-section {
+  background-color: var(--color-bg-subtle);
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: clamp(32px, 6vw, 100px);
+  align-items: center;
+}
+
+.concept-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background-color: var(--color-bg-secondary);
+}
+
+.concept-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.concept-main-quote {
+  font-size: clamp(1.45rem, 2.8vw, 2.2rem);
+  font-weight: 300;
+  line-height: 1.45;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-main);
+}
+
+.concept-text {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.95;
+  margin-bottom: 2rem;
+}
+
+/* Lookbook Preview */
+.lookbook-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(12px, 2vw, 28px);
+  margin-bottom: 3rem;
+}
+
+.lookbook-preview-item {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background-color: var(--color-bg-subtle);
+  display: block;
+}
+
+.lookbook-preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lookbook-preview-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.65) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  color: var(--color-white);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.lookbook-preview-item:hover .lookbook-preview-overlay {
+  opacity: 1;
+}
+
+.lookbook-preview-overlay h4 {
+  font-size: 0.95rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.lookbook-preview-overlay span {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.08em;
+  display: block;
+  margin-top: 0.2rem;
+}
+
+.lookbook-center-cta {
+  text-align: center;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.newsletter-box {
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.newsletter-form {
+  display: flex;
+  margin-top: 2rem;
+  border-bottom: 1px solid var(--color-black);
+  padding-bottom: 0.4rem;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 0.5rem 0;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+}
+
+.newsletter-input::placeholder {
+  color: var(--color-text-light);
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+.newsletter-submit {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.85rem;
+  min-height: 44px;
+}
+
+/* ==========================================================================
+   Page: PRODUCTS (/products)
+   ========================================================================== */
+
+.page-header {
+  padding-top: calc(var(--header-height) + clamp(30px, 6vw, 70px));
+  padding-bottom: clamp(24px, 4vw, 50px);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.page-header-title {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: clamp(24px, 4vw, 50px);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filter-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+}
+
+.filter-btn {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  position: relative;
+  padding: 0.5rem 0;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  transition: var(--transition-fast);
+}
+
+.filter-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: var(--color-black);
+  transition: width 0.25s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.is-active {
+  color: var(--color-black);
+}
+
+.filter-btn.is-active::after {
+  width: 100%;
+}
+
+.filter-right-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.products-count {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.sort-select-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.sort-select {
+  appearance: none;
+  -webkit-appearance: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.5rem 0.5rem 0;
+  cursor: pointer;
+  color: var(--color-text-main);
+  min-height: 40px;
+}
+
+.sort-select-wrapper svg {
+  position: absolute;
+  right: 0;
+  pointer-events: none;
+  width: 12px;
+  height: 12px;
+}
+
+.products-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3.5vw, 44px);
+}
+
+/* ==========================================================================
+   Page: PRODUCT DETAIL (/products/[id])
+   ========================================================================== */
+
+.breadcrumb-nav {
+  padding-top: calc(var(--header-height) + 16px);
+  padding-bottom: 16px;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  flex-wrap: wrap;
+}
+
+.breadcrumb-list a:hover {
+  color: var(--color-black);
+}
+
+.breadcrumb-separator {
+  color: var(--color-text-light);
+}
+
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(28px, 5vw, 70px);
+  align-items: flex-start;
+  margin-bottom: clamp(60px, 8vw, 120px);
+}
+
+/* Detail Gallery */
+.detail-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail-main-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background-color: var(--color-bg-subtle);
+  overflow: hidden;
+}
+
+.detail-main-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.25s ease;
+}
+
+.detail-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.detail-thumb-item {
+  aspect-ratio: 3 / 4;
+  background-color: var(--color-bg-subtle);
+  cursor: pointer;
+  border: 1px solid transparent;
+  overflow: hidden;
+  transition: var(--transition-fast);
+}
+
+.detail-thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-thumb-item.is-active,
+.detail-thumb-item:hover {
+  border-color: var(--color-black);
+}
+
+/* Detail Info */
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: calc(var(--header-height) + 24px);
+}
+
+.detail-brand {
+  font-size: 0.72rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.detail-title {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  line-height: 1.35;
+  margin-bottom: 0.85rem;
+}
+
+.detail-price {
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.detail-price .tax-note {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  font-weight: 300;
+}
+
+.detail-selector-group {
+  margin-bottom: 1.75rem;
+}
+
+.selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.75rem;
+}
+
+.selector-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.selector-val {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  margin-left: 0.5rem;
+}
+
+/* Color Swatches */
+.color-swatches {
+  display: flex;
+  gap: 0.85rem;
+}
+
+.color-swatch-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.color-swatch-btn::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  transition: var(--transition-fast);
+}
+
+.color-swatch-btn.is-selected::after {
+  border-color: var(--color-black);
+}
+
+/* Size Buttons */
+.size-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+}
+
+.size-btn {
+  padding: 0.85rem 0;
+  border: 1px solid var(--color-border);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+  min-height: 44px;
+  transition: var(--transition-fast);
+}
+
+.size-btn:hover {
+  border-color: var(--color-black);
+}
+
+.size-btn.is-selected {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+/* Action Area */
+.detail-actions-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.btn-add-to-cart {
+  width: 100%;
+  padding: 1.15rem 1.5rem;
+  font-size: 0.82rem;
+}
+
+/* Description & Specs */
+.detail-description {
+  font-size: 0.9rem;
+  color: #333333;
+  line-height: 1.95;
+  margin-bottom: 1.75rem;
+  white-space: pre-line;
+}
+
+.detail-specs {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.25rem;
+  margin-bottom: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.spec-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.spec-key {
+  color: var(--color-text-muted);
+  letter-spacing: 0.06em;
+}
+
+/* Size Guide Table */
+.size-guide-area {
+  margin-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.25rem;
+}
+
+.size-guide-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.size-table-scroll-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.size-table {
+  width: 100%;
+  min-width: 320px;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.size-table th,
+.size-table td {
+  padding: 0.65rem 0.4rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.size-table th {
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  background-color: var(--color-bg-subtle);
+}
+
+.size-table td {
+  font-weight: 300;
+}
+
+/* Related Products */
+.related-section {
+  border-top: 1px solid var(--color-border);
+  padding-top: clamp(50px, 7vw, 90px);
+}
+
+/* ==========================================================================
+   Page: ABOUT STORY (/about)
+   ========================================================================== */
+
+.about-hero {
+  padding-top: calc(var(--header-height) + clamp(30px, 6vw, 70px));
+  padding-bottom: clamp(30px, 6vw, 70px);
+  text-align: center;
+}
+
+.about-sections-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(60px, 10vw, 130px);
+}
+
+.about-story-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(30px, 6vw, 100px);
+  align-items: center;
+}
+
+.about-story-row.is-reversed {
+  direction: rtl;
+}
+
+.about-story-row.is-reversed .about-story-content {
+  direction: ltr;
+}
+
+.about-story-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background-color: var(--color-bg-subtle);
+  overflow: hidden;
+}
+
+.about-story-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-story-content {
+  padding: clamp(0px, 2.5vw, 24px);
+}
+
+.about-story-num {
+  font-size: 0.8rem;
+  letter-spacing: 0.28em;
+  color: var(--color-text-light);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.about-story-heading {
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  margin-bottom: 1.25rem;
+}
+
+.about-story-body {
+  font-size: 0.92rem;
+  color: #4B5563;
+  line-height: 2;
+  font-weight: 300;
+}
+
+/* Brand Movie Placeholder */
+.brand-movie-section {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 650px;
+  background-color: #0A0A0A;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(50px, 8vw, 100px);
+}
+
+.brand-movie-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  filter: grayscale(100%);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.brand-movie-overlay-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 0 16px;
+}
+
+.movie-play-btn {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: var(--transition-smooth);
+}
+
+.movie-play-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: #FFFFFF;
+  margin-left: 3px;
+}
+
+.movie-tagline {
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Page: LOOKBOOK (/lookbook)
+   ========================================================================== */
+
+.lookbook-gallery-grid {
+  columns: 3;
+  column-gap: clamp(14px, 2.5vw, 30px);
+}
+
+.lookbook-card {
+  break-inside: avoid;
+  margin-bottom: clamp(14px, 2.5vw, 30px);
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-bg-subtle);
+  cursor: pointer;
+  display: block;
+}
+
+.lookbook-card img {
+  width: 100%;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lookbook-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.75) 0%, transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  color: var(--color-white);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+@media (hover: hover) {
+  .lookbook-card:hover img {
+    transform: scale(1.04);
+  }
+  .lookbook-card:hover .lookbook-card-overlay {
+    opacity: 1;
+  }
+}
+
+.lookbook-card-look {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.lookbook-card-desc {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 0.25rem;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s;
+}
+
+.lightbox-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 410;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem;
+}
+
+.lightbox-close-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #FFFFFF;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 410;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-nav-btn.prev {
+  left: 10px;
+}
+
+.lightbox-nav-btn.next {
+  right: 10px;
+}
+
+.lightbox-nav-btn svg {
+  width: 26px;
+  height: 26px;
+  stroke-width: 1.3;
+}
+
+.lightbox-content {
+  max-width: 92vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-img-wrap {
+  max-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-img-wrap img {
+  max-height: 72vh;
+  max-width: 85vw;
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  margin-top: 1.25rem;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.lightbox-caption h3 {
+  font-size: 1.05rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.lightbox-caption p {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 0.2rem;
+}
+
+/* ==========================================================================
+   Page: CONTACT (/contact)
+   ========================================================================== */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 100px);
+  align-items: flex-start;
+}
+
+.contact-form-side h2,
+.faq-side h2 {
+  font-size: 1.3rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.form-label span.req {
+  color: var(--color-black);
+  margin-left: 0.2rem;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 16px; /* Avoid auto-zoom */
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-bottom-color: var(--color-black);
+}
+
+.form-textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.form-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.form-checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-black);
+  flex-shrink: 0;
+}
+
+/* FAQ Accordion */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-question-btn {
+  width: 100%;
+  padding: 1.35rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  gap: 1rem;
+  cursor: pointer;
+  min-height: 48px;
+}
+
+.faq-icon {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  background-color: var(--color-black);
+  transition: transform 0.25s ease;
+}
+
+.faq-icon::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  transform: translateY(-50%);
+}
+
+.faq-icon::after {
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.faq-item.is-active .faq-icon::after {
+  transform: translateX(-50%) rotate(90deg);
+  opacity: 0;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-answer-inner {
+  padding-bottom: 1.5rem;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.85;
+}
+
+/* Social & Store Info */
+.contact-meta-box {
+  margin-top: 3rem;
+  padding: 1.75rem;
+  background-color: var(--color-bg-subtle);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+}
+
+.contact-meta-block h4 {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.65rem;
+}
+
+.contact-meta-block p {
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.contact-social-row {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.contact-social-row a {
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 2px;
+}
+
+.contact-social-row a:hover {
+  border-bottom-color: var(--color-black);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding-top: clamp(50px, 8vw, 100px);
+  padding-bottom: clamp(30px, 5vw, 50px);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: clamp(28px, 4vw, 50px);
+  padding-bottom: clamp(32px, 6vw, 60px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-brand-col .footer-logo {
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.footer-brand-col .footer-tagline {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.85;
+  max-width: 280px;
+}
+
+.footer-col h4 {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 1.25rem;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-col a {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.04em;
+  transition: var(--transition-fast);
+}
+
+.footer-col a:hover {
+  color: #FFFFFF;
+}
+
+.footer-bottom {
+  padding-top: clamp(20px, 3.5vw, 36px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.08em;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* ==========================================================================
+   Toast Notification
+   ========================================================================== */
+
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  left: 20px;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.toast {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 0.85rem 1.4rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: var(--transition-smooth);
+  max-width: 100%;
+}
+
+.toast.is-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints & Mobile Enhancements
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .products-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .products-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lookbook-gallery-grid {
+    columns: 2;
+  }
+
+  .concept-grid,
+  .about-story-row,
+  .contact-layout,
+  .detail-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .about-story-row.is-reversed {
+    direction: ltr;
+  }
+
+  .detail-info {
+    position: static;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: var(--header-height-mobile);
+  }
+
+  .site-header {
+    height: var(--header-height-mobile);
+  }
+
+  .menu-trigger .menu-text {
+    display: none;
+  }
+
+  .brand-logo {
+    letter-spacing: 0.22em;
+  }
+
+  /* Grid: 2 columns on mobile */
+  .products-grid-4,
+  .products-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .product-image-wrap {
+    margin-bottom: 0.65rem;
+  }
+
+  .product-name {
+    font-size: 0.8rem;
+  }
+
+  .product-price {
+    font-size: 0.78rem;
+  }
+
+  .lookbook-preview-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .lookbook-gallery-grid {
+    columns: 2;
+    column-gap: 10px;
+  }
+
+  .lookbook-card {
+    margin-bottom: 10px;
+  }
+
+  .fullscreen-nav-header {
+    height: var(--header-height-mobile);
+  }
+
+  .fullscreen-nav-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .nav-link {
+    font-size: 2rem;
+  }
+
+  .nav-meta-info {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 24px;
+    gap: 1.5rem;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .contact-meta-box {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .filter-right-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .detail-thumbnails {
+    gap: 6px;
+  }
+
+  .size-buttons {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container,
+  .container-narrow {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .brand-logo {
+    font-size: 0.95rem;
+    letter-spacing: 0.16em;
+  }
+
+  .nav-link {
+    font-size: 1.7rem;
+  }
+
+  .products-grid-4,
+  .products-grid-3 {
+    gap: 10px;
+  }
+
+  .btn {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+</style>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="header-left">
+        <button type="button" class="menu-trigger" aria-label="Open menu">
+          <div class="burger-icon">
+            <span></span>
+            <span></span>
+          </div>
+          <span class="menu-text">MENU</span>
+        </button>
+      </div>
+
+      <div class="header-center">
+        <a href="index.html" class="brand-logo">URBAN CLOSET</a>
+      </div>
+
+      <div class="header-right">
+        <button type="button" class="header-action-btn header-search-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button type="button" class="header-action-btn header-cart-btn" aria-label="Shopping Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Fullscreen Navigation ================= -->
+  <div class="fullscreen-nav" role="dialog" aria-modal="true">
+    <div class="container fullscreen-nav-header">
+      <span class="brand-logo" style="color: #FFFFFF;">URBAN CLOSET</span>
+      <button type="button" class="fullscreen-nav-close" aria-label="Close menu">
+        <span>CLOSE</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="container fullscreen-nav-body">
+      <div class="fullscreen-nav-grid">
+        <ul class="nav-links-list">
+          <li class="nav-link-item">
+            <a href="index.html" class="nav-link">
+              <span class="nav-num">01</span>
+              <span>HOME</span>
+            </a>
+          </li>
+          <li class="nav-link-item">
+            <a href="products.html" class="nav-link">
+              <span class="nav-num">02</span>
+              <span>PRODUCTS</span>
+            </a>
+          </li>
+          <li class="nav-link-item">
+            <a href="about.html" class="nav-link">
+              <span class="nav-num">03</span>
+              <span>ABOUT</span>
+            </a>
+          </li>
+          <li class="nav-link-item">
+            <a href="lookbook.html" class="nav-link is-active">
+              <span class="nav-num">04</span>
+              <span>LOOKBOOK</span>
+            </a>
+          </li>
+          <li class="nav-link-item">
+            <a href="contact.html" class="nav-link">
+              <span class="nav-num">05</span>
+              <span>CONTACT</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-meta-info">
+          <div class="nav-meta-block">
+            <h4>CONCEPT</h4>
+            <p>都市で生きる人の、新しいワードローブ。<br>無駄を削ぎ落としたミニマルな日常着を提案します。</p>
+          </div>
+          <div class="nav-meta-block">
+            <h4>FLAGSHIP STORE</h4>
+            <p>〒150-0001<br>東京都渋谷区神宮前5-12-8 1F<br>OPEN: 12:00 - 20:00 (Wed Closed)</p>
+          </div>
+          <div class="nav-meta-block">
+            <h4>FOLLOW US</h4>
+            <div class="nav-social-links">
+              <a href="#" target="_blank" rel="noopener">Instagram</a>
+              <a href="#" target="_blank" rel="noopener">X</a>
+              <a href="#" target="_blank" rel="noopener">Pinterest</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= Search Modal ================= -->
+  <div class="search-modal" role="dialog" aria-modal="true">
+    <div class="search-modal-box">
+      <div class="search-header">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input" placeholder="Search by item, category..." aria-label="Search query">
+        <button type="button" class="search-close-btn">ESC</button>
+      </div>
+      <div class="search-results-area"></div>
+    </div>
+  </div>
+
+  <!-- ================= Cart Drawer ================= -->
+  <div class="cart-drawer-overlay">
+    <aside class="cart-drawer" aria-label="Shopping bag">
+      <div class="cart-drawer-header">
+        <h3>SHOPPING BAG</h3>
+        <button type="button" class="cart-drawer-close">CLOSE</button>
+      </div>
+      <div class="cart-drawer-items">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="cart-drawer-footer">
+        <div class="cart-subtotal-row">
+          <span>SUBTOTAL</span>
+          <span class="cart-subtotal-val total-amount">¥0</span>
+        </div>
+        <p style="font-size: 0.72rem; color: var(--color-text-muted); margin-bottom: 1rem;">※配送料は決済手続き時に計算されます（国内全品送料無料）</p>
+        <button type="button" class="btn btn-primary cart-checkout-btn" onclick="alert('UIデモのため決済機能はありません。');">
+          CHECKOUT
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ================= Main Content ================= -->
+  <main>
+    <header class="page-header">
+      <div class="container">
+        <span class="eyebrow">SPRING / SUMMER COLLECTION</span>
+        <h1 class="page-header-title">2025 SPRING</h1>
+        <p class="section-subtitle" style="margin-top: 1rem;">都市の余白に佇む、静謐なモノクローム。</p>
+      </div>
+    </header>
+
+    <div class="container section-spacer">
+      <!-- Masonry Gallery -->
+      <div class="lookbook-gallery-grid" id="lookbook-gallery">
+        <!-- 10 Items rendered dynamically by js/lookbook.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= Lightbox Modal ================= -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true">
+    <button type="button" class="lightbox-close-btn" id="lightbox-close">
+      <span>CLOSE</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <button type="button" class="lightbox-nav-btn prev" id="lightbox-prev" aria-label="Previous look">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
+    <button type="button" class="lightbox-nav-btn next" id="lightbox-next" aria-label="Next look">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+
+    <div class="lightbox-content">
+      <div class="lightbox-img-wrap">
+        <img id="lightbox-img" src="" alt="Lookbook Zoom View">
+      </div>
+      <div class="lightbox-caption">
+        <span class="eyebrow" id="lightbox-subtitle" style="color: rgba(255,255,255,0.6); margin-bottom: 0.25rem;">SILENT ARCHITECTURE</span>
+        <h3 id="lightbox-title">LOOK 01</h3>
+        <p id="lightbox-desc">ステンカラーコート × ワイドテーパードパンツ</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-logo">URBAN CLOSET</a>
+          <p class="footer-tagline">都市で生きる人の、新しいワードローブ。<br>ミニマル、モード、ジェンダーレス。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>NAVIGATION</h4>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="products.html">PRODUCTS</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="lookbook.html">LOOKBOOK</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>CUSTOMER CARE</h4>
+          <ul>
+            <li><a href="contact.html">よくある質問 (FAQ)</a></li>
+            <li><a href="contact.html">配送・返品について</a></li>
+            <li><a href="contact.html">サイズガイド</a></li>
+            <li><a href="contact.html">プライバシーポリシー</a></li>
+            <li><a href="contact.html">特定商取引法に基づく表記</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>FOLLOW US</h4>
+          <ul>
+            <li><a href="#" target="_blank" rel="noopener">INSTAGRAM</a></li>
+            <li><a href="#" target="_blank" rel="noopener">X (TWITTER)</a></li>
+            <li><a href="#" target="_blank" rel="noopener">PINTEREST</a></li>
+            <li><a href="#" target="_blank" rel="noopener">YOUTUBE</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 URBAN CLOSET. All Rights Reserved.</p>
+        <p>GENDERLESS WARDROBE FOR MODERN LIVING</p>
+      </div>
+    </div>
+  </footer>
+
+  <script id="embedded-scripts">
+/**
+ * URBAN CLOSET - Master Data
+ */
+
+const PRODUCTS_DATA = [
+  {
+    id: 1,
+    name: "オーバーサイズTシャツ",
+    nameEn: "Oversized Heavyweight T-Shirt",
+    category: "TOPS",
+    price: 6500,
+    isNew: true,
+    colors: [
+      { name: "White", code: "#F5F5F7" },
+      { name: "Black", code: "#111111" },
+      { name: "Gray", code: "#9E9E9E" }
+    ],
+    sizes: ["S", "M", "L", "XL"],
+    images: [
+      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1000&q=80"
+    ],
+    description: "上質な超長綿を限界まで度詰めしたヘビーウェイト天竺を使用。\n一枚で着ても透けず、ドロップショルダーと計算された身幅によって自然なドレープを生み出します。\n都市生活における日々のワードローブとして、タフさと上品さを高次元で両立しました。",
+    details: {
+      material: "コットン 100% (High-density Organic Cotton)",
+      origin: "MADE IN JAPAN",
+      care: "洗濯機洗い可（ネット使用推奨）/ 塩素系漂白剤不可"
+    },
+    sizeGuide: [
+      { size: "S", length: "69", width: "57", shoulder: "52", sleeve: "22" },
+      { size: "M", length: "72", width: "60", shoulder: "55", sleeve: "23.5" },
+      { size: "L", length: "75", width: "63", shoulder: "58", sleeve: "25" },
+      { size: "XL", length: "78", width: "66", shoulder: "61", sleeve: "26.5" }
+    ]
+  },
+  {
+    id: 2,
+    name: "ワイドテーパードパンツ",
+    nameEn: "Wide Tapered Wool Slacks",
+    category: "BOTTOMS",
+    price: 12000,
+    isNew: true,
+    colors: [
+      { name: "Black", code: "#111111" },
+      { name: "Gray", code: "#6B7280" },
+      { name: "White", code: "#F3F4F6" }
+    ],
+    sizes: ["S", "M", "L", "XL"],
+    images: [
+      "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=1000&q=80"
+    ],
+    description: "深いインタックを配し、腰回りにゆとりを持たせながら裾に向かって美しく絞り込んだシルエット。\n落ち感のある梳毛ウールライクなポリエステル素材を採用し、シワになりにくく撥水機能も付加。\nスニーカーにもレザーシューズにも調和するジェンダーレスな万能ボトムスです。",
+    details: {
+      material: "ポリエステル 70%, レーヨン 26%, ポリウレタン 4%",
+      origin: "MADE IN JAPAN",
+      care: "ドライクリーニング推奨 / 手洗い可"
+    },
+    sizeGuide: [
+      { size: "S", length: "98", width: "74-80", shoulder: "34", sleeve: "18.5" },
+      { size: "M", length: "101", width: "78-84", shoulder: "35", sleeve: "19.5" },
+      { size: "L", length: "104", width: "82-88", shoulder: "36.5", sleeve: "20.5" },
+      { size: "XL", length: "107", width: "86-92", shoulder: "38", sleeve: "21.5" }
+    ]
+  },
+  {
+    id: 3,
+    name: "リネンシャツ",
+    nameEn: "Minimal Relaxed Linen Shirt",
+    category: "TOPS",
+    price: 9800,
+    isNew: false,
+    colors: [
+      { name: "White", code: "#FAFAFA" },
+      { name: "Gray", code: "#BDBDBD" },
+      { name: "Black", code: "#1C1C1E" }
+    ],
+    sizes: ["S", "M", "L", "XL"],
+    images: [
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1000&q=80"
+    ],
+    description: "清涼感あふれるフレンチリネンを柔らかく洗い込み、自然なシワ感と肌なじみの良さを追求。\nフロントの比翼仕立てや小ぶりなレギュラーカラーが、ラフになりすぎない大人のミニマリズムを演出。\n羽織りとしても、インナーとしても季節を問わず活躍します。",
+    details: {
+      material: "フレンチリネン 100%",
+      origin: "MADE IN JAPAN",
+      care: "手洗いまたは洗濯ネット使用 / 日陰干し"
+    },
+    sizeGuide: [
+      { size: "S", length: "73", width: "58", shoulder: "50", sleeve: "59" },
+      { size: "M", length: "76", width: "61", shoulder: "52", sleeve: "61" },
+      { size: "L", length: "79", width: "64", shoulder: "54", sleeve: "63" },
+      { size: "XL", length: "82", width: "67", shoulder: "56", sleeve: "65" }
+    ]
+  },
+  {
+    id: 4,
+    name: "コーチジャケット",
+    nameEn: "Matte Technical Coach Jacket",
+    category: "OUTERWEAR",
+    price: 18000,
+    isNew: true,
+    colors: [
+      { name: "Black", code: "#0F0F10" },
+      { name: "Gray", code: "#4B5563" },
+      { name: "White", code: "#ECECEC" }
+    ],
+    sizes: ["S", "M", "L", "XL"],
+    images: [
+      "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1578932750294-f5075e85f44a?auto=format&fit=crop&w=1000&q=80"
+    ],
+    description: "光沢を抑えたマットタフタ生地によるソリッドな佇まいのコーチジャケット。\n裾のスナップボタンとドローコードでシルエットの変化が楽しめます。\n防風性と適度な撥水性を備え、都市の急な天候変化にもスマートに対応します。",
+    details: {
+      material: "表地: リサイクルナイロン 100% / 裏地: ポリエステル 100%",
+      origin: "MADE IN VIETNAM",
+      care: "手洗い可 / アイロン低温当て布"
+    },
+    sizeGuide: [
+      { size: "S", length: "70", width: "61", shoulder: "53", sleeve: "60" },
+      { size: "M", length: "73", width: "64", shoulder: "55", sleeve: "62" },
+      { size: "L", length: "76", width: "67", shoulder: "57", sleeve: "64" },
+      { size: "XL", length: "79", width: "70", shoulder: "59", sleeve: "66" }
+    ]
+  },
+  {
+    id: 5,
+    name: "クロップドフーディ",
+    nameEn: "Cropped Structured Hoodie",
+    category: "TOPS",
+    price: 11000,
+    isNew: false,
+    colors: [
+      { name: "Gray", code: "#78716C" },
+      { name: "Black", code: "#18181B" },
+      { name: "White", code: "#F4F4F5" }
+    ],
+    sizes: ["S", "M", "L", "XL"],
+    images: [
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80"
+    ],
+    description: "立体的な立ち上がりのフードと短めの着丈が特徴的なモードなスウェット。\nワイドパンツやハイウエストボトムスと抜群の相性を誇り、スタイルアップ効果を生み出します。\n裏毛には肌触りの良い起毛を施し、暖かく快適な着心地を提供します。",
+    details: {
+      material: "コットン 85%, ポリエステル 15%",
+      origin: "MADE IN JAPAN",
+      care: "洗濯機弱水流洗い / タンブラー乾燥不可"
+    },
+    sizeGuide: [
+      { size: "S", length: "58", width: "59", shoulder: "56", sleeve: "54" },
+      { size: "M", length: "61", width: "62", shoulder: "58", sleeve: "56" },
+      { size: "L", length: "64", width: "65", shoulder: "60", sleeve: "58" },
+      { size: "XL", length: "67", width: "68", shoulder: "62", sleeve: "60" }
+    ]
+  },
+  {
+    id: 6,
+    name: "カーゴパンツ",
+    nameEn: "Minimal Utility Cargo Trousers",
+    category: "BOTTOMS",
+    price: 14500,
+    isNew: true,
+    colors: [
+      { name: "Black", code: "#171717" },
+      { name: "Gray", code: "#52525B" },
+      { name: "White", code: "#E4E4E7" }
+    ],
+    sizes: ["S", "M", "L", "XL"],
+    images: [
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?auto=format&fit=crop&w=1000&q=80"
+    ],
+    description: "ミリタリーの無骨さを削ぎ落とし、マチを極力薄く仕上げたフラットポケットカーゴ。\n裾の内側にアジャスターコードを内蔵し、ストレートとジョガーの2WAYシルエットを実現。\n適度なハリ感とストレッチ性があり、都会的なアクティブシーンを支えます。",
+    details: {
+      material: "コットン 65%, ナイロン 32%, ポリウレタン 3%",
+      origin: "MADE IN JAPAN",
+      care: "洗濯機ネット洗い / 中温アイロン"
+    },
+    sizeGuide: [
+      { size: "S", length: "99", width: "72-78", shoulder: "33", sleeve: "21" },
+      { size: "M", length: "102", width: "76-82", shoulder: "34", sleeve: "22" },
+      { size: "L", length: "105", width: "80-86", shoulder: "35.5", sleeve: "23" },
+      { size: "XL", length: "108", width: "84-90", shoulder: "37", sleeve: "24" }
+    ]
+  },
+  {
+    id: 7,
+    name: "ドローストリングバッグ",
+    nameEn: "Drawstring Leather Shoulder Bag",
+    category: "ACCESSORIES",
+    price: 5500,
+    isNew: false,
+    colors: [
+      { name: "Black", code: "#09090B" },
+      { name: "White", code: "#FAFAFA" },
+      { name: "Gray", code: "#71717A" }
+    ],
+    sizes: ["ONE SIZE"],
+    images: [
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&w=1000&q=80"
+    ],
+    description: "手触りの滑らかなヴィーガンレザーを使用した、巾着型のミニマルショルダー。\n長財布やスマートフォン、小物がちょうど収まる絶妙なサイズ感。\nコードの結び目位置を変えることで、肩掛け・斜め掛け・手持ちの調整が自在です。",
+    details: {
+      material: "エコレザー（ポリウレタン 100%）",
+      origin: "MADE IN KOREA",
+      care: "乾いた柔らかい布で拭き取り / 水濡れ注意"
+    },
+    sizeGuide: [
+      { size: "FREE", length: "縦 24cm", width: "横 20cm", shoulder: "マチ 8cm", sleeve: "ストラップ最大 120cm" }
+    ]
+  },
+  {
+    id: 8,
+    name: "ステンカラーコート",
+    nameEn: "Bonded Stand Collar Coat",
+    category: "OUTERWEAR",
+    price: 28000,
+    isNew: true,
+    colors: [
+      { name: "Black", code: "#171717" },
+      { name: "Gray", code: "#525252" },
+      { name: "White", code: "#F5F5F4" }
+    ],
+    sizes: ["S", "M", "L", "XL"],
+    images: [
+      "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544022613-e87ce7526edb?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?auto=format&fit=crop&w=1000&q=80"
+    ],
+    description: "生地の張り感を生かした構築的なAラインシルエットのステンカラーコート。\nチンストラップを留めることでスタンドカラーとしても着用できる2WAY仕様。\nボンディング加工による上品な陰影が、都市の街並みの中で凛とした存在感を放ちます。",
+    details: {
+      material: "表地: コットン 60%, ポリエステル 40% / ボンディングフィルム加工",
+      origin: "MADE IN JAPAN",
+      care: "ドライクリーニング推奨"
+    },
+    sizeGuide: [
+      { size: "S", length: "106", width: "62", shoulder: "52", sleeve: "60" },
+      { size: "M", length: "110", width: "65", shoulder: "54", sleeve: "62" },
+      { size: "L", length: "114", width: "68", shoulder: "56", sleeve: "64" },
+      { size: "XL", length: "118", width: "71", shoulder: "58", sleeve: "66" }
+    ]
+  },
+  {
+    id: 9,
+    name: "リブニットベスト",
+    nameEn: "Architectural Rib Knit Vest",
+    category: "TOPS",
+    price: 8800,
+    isNew: false,
+    colors: [
+      { name: "Gray", code: "#64748B" },
+      { name: "Black", code: "#1E293B" },
+      { name: "White", code: "#F8FAFC" }
+    ],
+    sizes: ["S", "M", "L", "XL"],
+    images: [
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1000&q=80"
+    ],
+    description: "太番手の編み地が美しい陰影を描く、幾何学的なリブ編みのニットベスト。\n深めに設計されたサイドスリットとアームホールにより、シャツやロングTとのレイヤードが映えます。\nウール混でありながらチクチク感を抑えた滑らかなタッチです。",
+    details: {
+      material: "ファインメリノウール 50%, アクリル 50%",
+      origin: "MADE IN JAPAN",
+      care: "ドライクリーニング推奨 / 平干し"
+    },
+    sizeGuide: [
+      { size: "S", length: "64", width: "54", shoulder: "44", sleeve: "-" },
+      { size: "M", length: "67", width: "57", shoulder: "46", sleeve: "-" },
+      { size: "L", length: "70", width: "60", shoulder: "48", sleeve: "-" },
+      { size: "XL", length: "73", width: "63", shoulder: "50", sleeve: "-" }
+    ]
+  },
+  {
+    id: 10,
+    name: "ナイロンショーツ",
+    nameEn: "Quick-Dry Easy Nylon Shorts",
+    category: "BOTTOMS",
+    price: 7200,
+    isNew: false,
+    colors: [
+      { name: "Black", code: "#18181B" },
+      { name: "Gray", code: "#71717A" },
+      { name: "White", code: "#F4F4F5" }
+    ],
+    sizes: ["S", "M", "L", "XL"],
+    images: [
+      "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=1000&q=80"
+    ],
+    description: "撥水・速乾機能を持つタスランナイロンを採用した、アクティブシーン対応のショートパンツ。\nウエストはゴム＆スピンドル仕様でストレスフリーな履き心地。\n膝上の絶妙なレングスとワイドな裾幅が、都会的な軽快さと抜け感を演出します。",
+    details: {
+      material: "ナイロン 100% (撥水加工)",
+      origin: "MADE IN CHINA",
+      care: "洗濯機洗い可（ネット使用）"
+    },
+    sizeGuide: [
+      { size: "S", length: "44", width: "70-78", shoulder: "32", sleeve: "30" },
+      { size: "M", length: "46", width: "74-82", shoulder: "33", sleeve: "31" },
+      { size: "L", length: "48", width: "78-86", shoulder: "34", sleeve: "32" },
+      { size: "XL", length: "50", width: "82-90", shoulder: "35", sleeve: "33" }
+    ]
+  },
+  {
+    id: 11,
+    name: "ロゴキャップ",
+    nameEn: "Embroidered Minimalist Cap",
+    category: "ACCESSORIES",
+    price: 4800,
+    isNew: false,
+    colors: [
+      { name: "Black", code: "#09090B" },
+      { name: "Gray", code: "#A1A1AA" },
+      { name: "White", code: "#FFFFFF" }
+    ],
+    sizes: ["ONE SIZE"],
+    images: [
+      "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1534215754734-18e55d13e346?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=1000&q=80"
+    ],
+    description: "フロントに極小のブランドロゴを同色刺繍で施した、ミニマルを極めた6パネルキャップ。\n浅すぎず深すぎない日本人の頭部にフィットするクラウン設計。\nバックストラップには高級感のあるメタルバックルを採用しています。",
+    details: {
+      material: "コットン 100% (ウォッシュドツイル)",
+      origin: "MADE IN JAPAN",
+      care: "手洗い推奨 / 絞り不可"
+    },
+    sizeGuide: [
+      { size: "FREE", length: "頭周り 55-61cm (調整可)", width: "つば長 7.2cm", shoulder: "高さ 11.5cm", sleeve: "-" }
+    ]
+  },
+  {
+    id: 12,
+    name: "レイヤードロンT",
+    nameEn: "Double Face Long Sleeve Tee",
+    category: "TOPS",
+    price: 7800,
+    isNew: true,
+    colors: [
+      { name: "White", code: "#F8FAFC" },
+      { name: "Black", code: "#0F172A" },
+      { name: "Gray", code: "#94A3B8" }
+    ],
+    sizes: ["S", "M", "L", "XL"],
+    images: [
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=1000&q=80"
+    ],
+    description: "裾と袖口からわずかに覗くフェイクレイヤード仕様が、一枚着で洗練された陰影を演出。\n表地にはシルケット加工を施したクリアな天竺、裏地には吸湿性の高い柔らかな糸を使用。\n長時間の着用でも型崩れせず、美しい落ち感をキープします。",
+    details: {
+      material: "コットン 100% (Silket finish)",
+      origin: "MADE IN JAPAN",
+      care: "洗濯機洗い可（ネット使用）"
+    },
+    sizeGuide: [
+      { size: "S", length: "71", width: "58", shoulder: "53", sleeve: "60" },
+      { size: "M", length: "74", width: "61", shoulder: "55", sleeve: "61.5" },
+      { size: "L", length: "77", width: "64", shoulder: "57", sleeve: "63" },
+      { size: "XL", length: "80", width: "67", shoulder: "59", sleeve: "64.5" }
+    ]
+  }
+];
+
+const LOOKBOOK_ITEMS = [
+  {
+    id: 1,
+    title: "LOOK 01",
+    subtitle: "Silent Architecture",
+    description: "ステンカラーコート × ワイドテーパードパンツ",
+    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80",
+    ratio: "tall"
+  },
+  {
+    id: 2,
+    title: "LOOK 02",
+    subtitle: "Monochrome Horizon",
+    description: "オーバーサイズTシャツ × カーゴパンツ",
+    image: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1200&q=80",
+    ratio: "normal"
+  },
+  {
+    id: 3,
+    title: "LOOK 03",
+    subtitle: "Subtle Shadow",
+    description: "リネンシャツ × ナイロンショーツ",
+    image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80",
+    ratio: "wide"
+  },
+  {
+    id: 4,
+    title: "LOOK 04",
+    subtitle: "Urban Silhouette",
+    description: "コーチジャケット × リブニットベスト",
+    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80",
+    ratio: "tall"
+  },
+  {
+    id: 5,
+    title: "LOOK 05",
+    subtitle: "Fluid Movement",
+    description: "クロップドフーディ × ワイドテーパードパンツ",
+    image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1200&q=80",
+    ratio: "normal"
+  },
+  {
+    id: 6,
+    title: "LOOK 06",
+    subtitle: "Pure Geometry",
+    description: "レイヤードロンT × ドローストリングバッグ",
+    image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=80",
+    ratio: "tall"
+  },
+  {
+    id: 7,
+    title: "LOOK 07",
+    subtitle: "Concrete Garden",
+    description: "ステンカラーコート × ロゴキャップ",
+    image: "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&w=1200&q=80",
+    ratio: "normal"
+  },
+  {
+    id: 8,
+    title: "LOOK 08",
+    subtitle: "Daybreak City",
+    description: "リブニットベスト × リネンシャツ",
+    image: "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=1200&q=80",
+    ratio: "wide"
+  },
+  {
+    id: 9,
+    title: "LOOK 09",
+    subtitle: "Essential Form",
+    description: "オーバーサイズTシャツ × ドローストリングバッグ",
+    image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=80",
+    ratio: "tall"
+  },
+  {
+    id: 10,
+    title: "LOOK 10",
+    subtitle: "Modern Wardrobe",
+    description: "コーチジャケット × カーゴパンツ",
+    image: "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1200&q=80",
+    ratio: "normal"
+  }
+];
+
+const FAQS_DATA = [
+  {
+    q: "注文から発送までどのくらいかかりますか？",
+    a: "通常、ご注文確定日（ご決済確認後）より1〜3営業日以内に発送いたします。予約商品・先行受注品につきましては、各商品ページに記載のお届け時期をご確認ください。"
+  },
+  {
+    q: "サイズが合わない場合の返品・交換は可能ですか？",
+    a: "商品到着後7日以内であれば、室内での試着のみ・タグ付き・未使用品に限りサイズ交換または返品を承ります。お問い合わせフォームより注文番号とご希望の対応をご連絡ください。"
+  },
+  {
+    q: "ギフトラッピングは可能ですか？",
+    a: "オリジナルのミニマルなギフトバッグおよびメッセージカードをご用意しております（無料）。カート内、またはご注文時の備考欄にて「ギフト希望」とご指定いただけます。"
+  },
+  {
+    q: "完売商品の再入荷通知を受け取ることはできますか？",
+    a: "完売商品ページの「RESTOCK NOTIFICATION」ボタンよりメールアドレスをご登録いただくことで、再入荷が確定次第、最優先で通知メールをお送りいたします。"
+  },
+  {
+    q: "海外への配送は行っていますか？",
+    a: "はい、EMS（国際スピード郵便）およびDHLを利用した海外発送に対応しております。地域ごとの配送料および関税についての詳細は、カスタマーサポートまで直接お問い合わせください。"
+  }
+];
+
+/**
+ * URBAN CLOSET - Main JavaScript
+ * Header, Fullscreen Nav, Quick Search, Cart Drawer, Toast Notifications
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  initHeaderScroll();
+  initFullscreenNav();
+  initSearchModal();
+  initCartDrawer();
+  initNewsletter();
+});
+
+/* ==========================================================================
+   Header Scroll Behavior
+   ========================================================================== */
+function initHeaderScroll() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  const handleScroll = () => {
+    if (window.scrollY > 40) {
+      header.classList.add('is-scrolled');
+    } else {
+      header.classList.remove('is-scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+}
+
+/* ==========================================================================
+   Fullscreen Navigation
+   ========================================================================== */
+function initFullscreenNav() {
+  const trigger = document.querySelector('.menu-trigger');
+  const nav = document.querySelector('.fullscreen-nav');
+  const closeBtn = document.querySelector('.fullscreen-nav-close');
+
+  if (!nav) return;
+
+  const openNav = () => {
+    nav.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeNav = () => {
+    nav.classList.remove('is-open');
+    document.body.style.overflow = '';
+  };
+
+  if (trigger) trigger.addEventListener('click', openNav);
+  if (closeBtn) closeBtn.addEventListener('click', closeNav);
+
+  // Close on ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+      closeNav();
+    }
+  });
+
+  // Highlight active link
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = nav.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+      link.classList.add('is-active');
+    }
+  });
+}
+
+/* ==========================================================================
+   Quick Search Modal
+   ========================================================================== */
+function initSearchModal() {
+  const searchTriggers = document.querySelectorAll('.header-search-btn');
+  const searchModal = document.querySelector('.search-modal');
+  const searchClose = document.querySelector('.search-close-btn');
+  const searchInput = document.querySelector('.search-input');
+  const searchResults = document.querySelector('.search-results-area');
+  const quickTags = document.querySelectorAll('.search-quick-tag');
+
+  if (!searchModal) return;
+
+  const openSearch = () => {
+    searchModal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    if (searchInput) {
+      setTimeout(() => searchInput.focus(), 150);
+    }
+  };
+
+  const closeSearch = () => {
+    searchModal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  };
+
+  searchTriggers.forEach(btn => btn.addEventListener('click', openSearch));
+  if (searchClose) searchClose.addEventListener('click', closeSearch);
+
+  searchModal.addEventListener('click', (e) => {
+    if (e.target === searchModal) closeSearch();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && searchModal.classList.contains('is-open')) {
+      closeSearch();
+    }
+  });
+
+  const performSearch = (keyword) => {
+    if (!searchResults || typeof PRODUCTS_DATA === 'undefined') return;
+
+    const term = keyword.trim().toLowerCase();
+    if (!term) {
+      searchResults.innerHTML = `
+        <div style="font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--color-text-muted); margin-bottom:0.75rem;">POPULAR SEARCHES</div>
+        <div class="search-quick-tags">
+          <button type="button" class="search-quick-tag" data-tag="TOPS">TOPS</button>
+          <button type="button" class="search-quick-tag" data-tag="Tシャツ">Tシャツ</button>
+          <button type="button" class="search-quick-tag" data-tag="パンツ">パンツ</button>
+          <button type="button" class="search-quick-tag" data-tag="コート">コート</button>
+          <button type="button" class="search-quick-tag" data-tag="バッグ">バッグ</button>
+        </div>
+      `;
+      bindQuickTags();
+      return;
+    }
+
+    const matched = PRODUCTS_DATA.filter(item =>
+      item.name.toLowerCase().includes(term) ||
+      item.nameEn.toLowerCase().includes(term) ||
+      item.category.toLowerCase().includes(term)
+    );
+
+    if (matched.length === 0) {
+      searchResults.innerHTML = `
+        <p style="padding: 2rem 0; text-align: center; color: var(--color-text-muted); font-size: 0.88rem;">
+          「${keyword}」に一致する商品は見つかりませんでした。
+        </p>
+      `;
+      return;
+    }
+
+    let html = `<div style="font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--color-text-muted); margin-bottom:1rem;">${matched.length} ITEMS FOUND</div>`;
+    matched.forEach(item => {
+      html += `
+        <a href="product-detail.html?id=${item.id}" class="search-item-result">
+          <img src="${item.images[0]}" alt="${item.name}">
+          <div>
+            <div class="item-name">${item.name}</div>
+            <div style="font-size: 0.75rem; color: var(--color-text-muted); letter-spacing:0.05em;">${item.category}</div>
+          </div>
+          <div class="item-price">¥${item.price.toLocaleString()}</div>
+        </a>
+      `;
+    });
+    searchResults.innerHTML = html;
+  };
+
+  const bindQuickTags = () => {
+    document.querySelectorAll('.search-quick-tag').forEach(tag => {
+      tag.addEventListener('click', () => {
+        const val = tag.getAttribute('data-tag');
+        if (searchInput) {
+          searchInput.value = val;
+          performSearch(val);
+        }
+      });
+    });
+  };
+
+  bindQuickTags();
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      performSearch(e.target.value);
+    });
+  }
+}
+
+/* ==========================================================================
+   Cart System (Local Storage & Drawer UI)
+   ========================================================================== */
+const CartState = {
+  getItems() {
+    try {
+      return JSON.parse(localStorage.getItem('urban_closet_cart')) || [];
+    } catch {
+      return [];
+    }
+  },
+  saveItems(items) {
+    localStorage.setItem('urban_closet_cart', JSON.stringify(items));
+    window.dispatchEvent(new Event('cartUpdated'));
+  },
+  addItem(product, color, size, qty = 1) {
+    const items = this.getItems();
+    const existingIndex = items.findIndex(
+      i => i.id === product.id && i.color === color && i.size === size
+    );
+
+    if (existingIndex > -1) {
+      items[existingIndex].qty += qty;
+    } else {
+      items.push({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.images[0],
+        color: color,
+        size: size,
+        qty: qty
+      });
+    }
+
+    this.saveItems(items);
+    showToast(`カートに追加しました: ${product.name}`);
+  },
+  removeItem(index) {
+    const items = this.getItems();
+    items.splice(index, 1);
+    this.saveItems(items);
+  },
+  getTotalCount() {
+    return this.getItems().reduce((sum, item) => sum + item.qty, 0);
+  },
+  getTotalAmount() {
+    return this.getItems().reduce((sum, item) => sum + (item.price * item.qty), 0);
+  }
+};
+
+function initCartDrawer() {
+  const overlay = document.querySelector('.cart-drawer-overlay');
+  const cartTriggers = document.querySelectorAll('.header-cart-btn');
+  const closeBtn = document.querySelector('.cart-drawer-close');
+  const itemsContainer = document.querySelector('.cart-drawer-items');
+  const subtotalEl = document.querySelector('.cart-subtotal-val');
+  const badges = document.querySelectorAll('.cart-badge');
+
+  const updateCartUI = () => {
+    const items = CartState.getItems();
+    const totalCount = CartState.getTotalCount();
+    const totalAmount = CartState.getTotalAmount();
+
+    // Update badges
+    badges.forEach(badge => {
+      badge.textContent = totalCount;
+      badge.style.display = totalCount > 0 ? 'flex' : 'none';
+    });
+
+    // Update drawer items
+    if (itemsContainer) {
+      if (items.length === 0) {
+        itemsContainer.innerHTML = `
+          <div class="cart-empty-message">
+            <p>ショッピングバッグに商品はありません</p>
+            <a href="products.html" class="btn btn-outline" style="margin-top: 1.5rem; display: inline-flex;">SHOP ALL ITEMS</a>
+          </div>
+        `;
+      } else {
+        let html = '';
+        items.forEach((item, index) => {
+          html += `
+            <div class="cart-item-card">
+              <img src="${item.image}" alt="${item.name}">
+              <div class="cart-item-info">
+                <h4>${item.name}</h4>
+                <div class="cart-item-meta">Color: ${item.color} / Size: ${item.size}</div>
+                <div class="cart-item-meta">数量: ${item.qty}</div>
+                <div class="cart-item-price">¥${(item.price * item.qty).toLocaleString()}</div>
+              </div>
+              <button type="button" class="cart-item-remove" data-index="${index}" title="削除">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          `;
+        });
+        itemsContainer.innerHTML = html;
+
+        // Bind remove buttons
+        itemsContainer.querySelectorAll('.cart-item-remove').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const index = parseInt(btn.getAttribute('data-index'), 10);
+            CartState.removeItem(index);
+          });
+        });
+      }
+    }
+
+    if (subtotalEl) {
+      subtotalEl.textContent = `¥${totalAmount.toLocaleString()}`;
+    }
+  };
+
+  const openDrawer = () => {
+    if (!overlay) return;
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeDrawer = () => {
+    if (!overlay) return;
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+  };
+
+  cartTriggers.forEach(btn => btn.addEventListener('click', openDrawer));
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+
+  if (overlay) {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeDrawer();
+    });
+  }
+
+  window.addEventListener('cartUpdated', updateCartUI);
+  updateCartUI();
+
+  // Expose global open cart drawer
+  window.openCartDrawer = openDrawer;
+}
+
+/* ==========================================================================
+   Toast Notification System
+   ========================================================================== */
+function showToast(message) {
+  let container = document.querySelector('.toast-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.className = 'toast-container';
+    document.body.appendChild(container);
+  }
+
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.innerHTML = `
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span>${message}</span>
+  `;
+
+  container.appendChild(toast);
+
+  // Trigger animation
+  requestAnimationFrame(() => {
+    toast.classList.add('is-show');
+  });
+
+  setTimeout(() => {
+    toast.classList.remove('is-show');
+    setTimeout(() => {
+      if (toast.parentNode) toast.parentNode.removeChild(toast);
+    }, 400);
+  }, 3200);
+}
+
+/* ==========================================================================
+   Newsletter Submission
+   ========================================================================== */
+function initNewsletter() {
+  const forms = document.querySelectorAll('.newsletter-form');
+  forms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = form.querySelector('.newsletter-input');
+      if (input && input.value) {
+        showToast('ニュースレターにご登録いただきありがとうございます。');
+        input.value = '';
+      }
+    });
+  });
+}
+
+
+/* ==========================================================================
+   Smart Link Resolver for both local file:// and web server hosting
+   ========================================================================== */
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a');
+  if (!link) return;
+  const href = link.getAttribute('href');
+  if (!href || href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+
+  // Local file:// protocol
+  if (window.location.protocol === 'file:') {
+    const isSubdir = window.location.pathname.indexOf('/products/') !== -1 ||
+                     window.location.pathname.indexOf('\\products\\') !== -1 ||
+                     window.location.pathname.indexOf('/about/') !== -1 ||
+                     window.location.pathname.indexOf('\\about\\') !== -1 ||
+                     window.location.pathname.indexOf('/lookbook/') !== -1 ||
+                     window.location.pathname.indexOf('\\lookbook\\') !== -1 ||
+                     window.location.pathname.indexOf('/contact/') !== -1 ||
+                     window.location.pathname.indexOf('\\contact\\') !== -1;
+    if (isSubdir && !href.startsWith('../')) {
+      if (href === 'index.html' || href === 'products.html' || href === 'about.html' || href === 'lookbook.html' || href === 'contact.html' || href.startsWith('product-detail.html')) {
+        e.preventDefault();
+        window.location.href = '../' + href;
+      }
+    }
+  } else {
+    // Web hosting (Vercel, Netlify, custom domain, etc.)
+    if (href === 'index.html') {
+      e.preventDefault();
+      window.location.href = '/';
+    } else if (href === 'products.html') {
+      e.preventDefault();
+      window.location.href = '/products';
+    } else if (href === 'about.html') {
+      e.preventDefault();
+      window.location.href = '/about';
+    } else if (href === 'lookbook.html') {
+      e.preventDefault();
+      window.location.href = '/lookbook';
+    } else if (href === 'contact.html') {
+      e.preventDefault();
+      window.location.href = '/contact';
+    } else if (href.startsWith('product-detail.html?id=')) {
+      e.preventDefault();
+      const id = href.split('id=')[1];
+      window.location.href = '/products/' + id;
+    }
+  }
+});
+
+/**
+ * URBAN CLOSET - Lookbook Logic
+ * Dynamic Masonry Rendering, Lightbox Modal with Prev/Next Navigation
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const gallery = document.querySelector('#lookbook-gallery');
+  if (!gallery || typeof LOOKBOOK_ITEMS === 'undefined') return;
+
+  // Render gallery
+  gallery.innerHTML = LOOKBOOK_ITEMS.map((item, index) => `
+    <div class="lookbook-card" data-index="${index}">
+      <img src="${item.image}" alt="${item.title}" loading="lazy">
+      <div class="lookbook-card-overlay">
+        <span class="eyebrow" style="color: rgba(255,255,255,0.7); margin-bottom: 0.25rem;">${item.subtitle}</span>
+        <h3 class="lookbook-card-look">${item.title}</h3>
+        <p class="lookbook-card-desc">${item.description}</p>
+      </div>
+    </div>
+  `).join('');
+
+  // Lightbox Modal Setup
+  const lightbox = document.querySelector('#lightbox-modal');
+  const lightboxImg = document.querySelector('#lightbox-img');
+  const lightboxTitle = document.querySelector('#lightbox-title');
+  const lightboxSubtitle = document.querySelector('#lightbox-subtitle');
+  const lightboxDesc = document.querySelector('#lightbox-desc');
+  const closeBtn = document.querySelector('#lightbox-close');
+  const prevBtn = document.querySelector('#lightbox-prev');
+  const nextBtn = document.querySelector('#lightbox-next');
+
+  let currentIndex = 0;
+
+  const showLightbox = (index) => {
+    currentIndex = (index + LOOKBOOK_ITEMS.length) % LOOKBOOK_ITEMS.length;
+    const item = LOOKBOOK_ITEMS[currentIndex];
+
+    if (lightboxImg) {
+      lightboxImg.style.opacity = '0';
+      lightboxImg.src = item.image;
+      lightboxImg.onload = () => {
+        lightboxImg.style.opacity = '1';
+      };
+    }
+    if (lightboxTitle) lightboxTitle.textContent = item.title;
+    if (lightboxSubtitle) lightboxSubtitle.textContent = item.subtitle;
+    if (lightboxDesc) lightboxDesc.textContent = item.description;
+
+    lightbox.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    lightbox.classList.remove('is-open');
+    document.body.style.overflow = '';
+  };
+
+  // Click card to open
+  gallery.querySelectorAll('.lookbook-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const idx = parseInt(card.getAttribute('data-index'), 10);
+      showLightbox(idx);
+    });
+  });
+
+  // Controls
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  if (prevBtn) prevBtn.addEventListener('click', () => showLightbox(currentIndex - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => showLightbox(currentIndex + 1));
+
+  // Close on outer click
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target.classList.contains('lightbox-content') || e.target.classList.contains('lightbox-img-wrap')) {
+        closeLightbox();
+      }
+    });
+  }
+
+  // Keyboard Navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showLightbox(currentIndex - 1);
+    if (e.key === 'ArrowRight') showLightbox(currentIndex + 1);
+  });
+});
+
+</script>
+  <!-- Scripts -->
+  <!-- <script src="js/data.js"></script> -->
+  <!-- <script src="js/main.js"></script> -->
+  <!-- <script src="js/lookbook.js"></script> -->
+</body>
+</html>
+
+
+
+
